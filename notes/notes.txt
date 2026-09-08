@@ -1,0 +1,340 @@
+================================Day 32==============================
+what is react 
+
+- React is a library that helps develpers build fast and interactive user interface using re-usable componets
+- React app is a collection of different libraries.
+- Componets : re-usable piece of user interface. file name should be in PascalCase. and file extension should be .jsx or .js.
+- components are arranged in a tree like structure 
+- there will be a root component in react app which commonly known as 'App' component.
+- react used to create single page web application (sPa) : loads one html page and dynamically updates the content as user interacts with the app.without reloading the entire page. 
+- virtual DOM : virtula (memory) representation of the real DOM. React uses to upadte only the changed parts of the DOM instead of reloading the entire page.
+    -setps 
+        - initial Render 
+            react creates virtual DOM and compares it with the real DOM and updates the real DOM with the changes.
+        - state changes 
+            when state of a component changes, react creates a new virtual DOM and compares it with the previous virtual DOM and updates the real DOM with the changes.
+        - comparison(diffing) 
+            compare the new virtual DOM with the previous virtual DOM and updates the real DOM with the changes.
+        - react updates only the changed parts of the DOM instead of reloading the entire page.
+
+    -diffing is porcess of comparing the new virtual DOM with the previous virtual DOM and updating the real DOM with the changes.
+    -reaconciliation is the process of updating the real DOM with the changes.
+
+-JSX : JavaScript XML is a syntax extension for JavaScript that allows you to write HTML-like code in your JavaScript files. It is used in React to describe the structure of the user interface.
+
+    without JSX : 
+        const element = React.createElement('h1', {className: 'fw-bold'}, 'Hello, world!');
+
+    with JSX :
+        const element = <h1 className='fw-bold'>Hello, world!</h1>;
+
+-rules for using JSX :
+    - every JSX element must be wrapped in a single parent element.
+    - parent tag can be any container tag like <div>, <section>, <article>, <main>, <header>, <footer> etc. or a React fragment <> </>.
+    - react fragment lets you group a list of children without adding extra nodes to the DOM element.Frgments helps you to avoid adding unnecessary extra <div> wrappers.
+    - JSX must have only one parent element.
+    - every JSX element must have a closing tag.
+    - instead of class attribute, use className attribute in JSX.
+    - jsx using camelCase for event handlers instead of lowercase.
+    - to provide js inside JSX, use curly braces {}.
+    - JSX can contain expressions inside curly braces {}.
+    - JSX can contain comments inside curly braces {}.
+
+-React app creation
+    -CRA(Create React App)
+    -vite: build tool tool for creating web page
+        -install vite : npm i -g create-vite
+        -npm (node package manager) is a package manager for JavaScript programming language. It is used to install and manage packages (libraries) for JavaScript projects.
+        -create react app: 
+            npm create vite@latest
+        -to run react project : npm run dev
+
+    react project files and folder structure
+        -vite.config.js : configuration file for vite
+        -README.md : file that contains information about the project
+        -node_modules : folder that contains all the dependencies (libraries) for the project
+        -package.json : file that contains information about the project and its dependencies. it is configuration  by npm to manage the project 
+        -package-lock.json : file that contains information about the exact version of the dependencies installed in the project
+        -public : folder that contains static files like index.html, favicon.ico, manifest.json etc
+        -src : folder that contains all the source code for the project
+            -main.jsx : entry point for the react app
+            -App.jsx : root component for the react app
+            -index.css : global css file for the react app
+            -assets : folder that contains images, fonts, icons etc
+        -.gitignore : file that tells git which files and folders to ignore when committing the project to a git repository
+
+======================================================================================================================================================
+    babel : JavaScript compiler that converts modern JavaScript code into backward compatible version of JavaScript that can run in older browsers. It is used in React to convert JSX code into JavaScript code that can be understood by the browser.
+    component : part of UI 
+        -rules for creating a component :
+            -component name should be in PascalCase.
+            -component should be a function that returns JSX.
+            -component should be exported using export default.
+            -component should be imported using import statement.
+
+    props : short for properties, are used to pass data from parent component to child component. props are read-only and cannot be modified by the child component. props are passed as an object to the child component.
+        -props are used to make components reusable and dynamic.    
+    react Events bindings : 
+        -onClick : event handler for click event
+        -onChange : event handler for change event
+        -onSubmit : event handler for submit event
+        -onMouseEnter : event handler for mouse enter event
+        -onMouseLeave : event handler for mouse leave event
+        -onKeyDown : event handler for key down event
+        -onKeyUp : event handler for key up event
+        -onFocus : event handler for focus event
+        -onBlur : event handler for blur event
+
+        function wihtout argument : 
+            const handleClick = () => {
+                console.log('Button clicked');
+            }
+            <button onClick={handleClick}>Click me</button>
+        function with argument :
+            const handleClick = (event) => {
+                console.log('Button clicked', event);
+            }
+            <button onClick={(event) => handleClick(event)}>Click me</button>
+
+        function with argument as event : 
+            const handleClick = (e) => {
+                console.log('Button clicked', e);
+            }
+            < input type="text" onChange={(e) => handleClick(e)} />
+            
+=======================================================================================================================================================
+React Hooks : 
+    -useState : hook that allows you to add state to functional components. it returns an array with two elements, the current state value and a function to update the state value.
+        -syntax : const [state, setState] = useState(initialState);
+        -initialState : initial value of the state.
+        -state : current value of the state.
+        -setState : function to update the state value.
+
+    -useEffect : hook that allows you to perform side effects in functional components. it takes two arguments, a function to perform the side effect and an array of dependencies. the function is called after the component is rendered and whenever the dependencies change.
+        -syntax : useEffect(() => {
+                //code to execute
+             }, [dependencies]);
+        -dependencies : array of values that the effect depends on. if any of the values in the array change, the effect will be re-run.
+            -no dependency : whenever the component is re-renders, the code inside useEffect runs
+            -[]            : run this effect only after the initial render 
+            -[data]        : run this effect when the data changes
+
+
+    react rounter dom library that allows you to handle routing in a react application. it allows you to create single page applications with multiple views and navigation between them without reloading the entire page.
+        -install react router dom : npm install react-router-dom
+        -import BrowserRouter, Routes, Route from react-router-dom
+        -BrowserRouter : component that wraps the entire application and provides routing functionality.
+        -Routes : component that contains all the routes for the application.
+        -Route : component that defines a route for the application. it takes two props, path and element. path is the URL path for the route and element is the component to render when the route is matched.
+            -syntax : <Route path="/path" element={<Component />} />    
+
+
+========================================================================================================================================================
+
+introduced new library called material ui (MUI) which is a popular React UI framework that provides a set of pre-designed components and styles based on Google's Material Design guidelines. It helps developers to build responsive and visually appealing user interfaces quickly and easily.
+
+    npm install @mui/material @emotion/react @emotion/styled
+
+react icons library that provides a set of customizable icons for React applications. It allows developers to easily add icons to their components without having to create their own SVGs or use external icon libraries.
+    npm install react-icons
+
+
+    link tag : provided by react router dom library to create links between different routes in a react application. it allows you to navigate between different views without reloading the entire page.
+        -syntax : <Link to="/path">Link Text</Link> 
+        import { Link } from 'react-router-dom';    
+
+======================================================================================================================================
+state management : 
+    -state : is a JavaScript object that holds data that can change over time. it is used to manage the data and behavior of a component. state is mutable and can be changed using the setState function.
+    -props : are read-only and cannot be modified by the child component. props are passed as an object to the child component.
+    -lifting state up : is a technique in React where you move the state from a child component to a parent component so that it can be shared between multiple child components. this allows for better state management and avoids prop drilling.
+
+
+===================================================================================================================
+npm init : command used to create a new Node.js project. it creates a package.json file that contains information about the project and its dependencies. it also initializes a new git repository if git is installed on the system.
+
+npm init -y : command used to create a new Node.js project with default settings. it creates a package.json file with default values for the project name, version, description, main file, author, and license. it also initializes a new git repository if git is installed on the system.
+ 
+npm i json-server : command used to install the json-server package. json-server is a package that allows you to create a fake REST API with zero coding. it is useful for prototyping and testing front-end applications without having to set up a real back-end server.
+
+npm run json-server : command used to start the json-server. it starts a local server that serves the fake REST API based on the data in the db.json file. by default, it runs on http://localhost:3000.
+    syntax : "json-server": "json-server --watch db.json --port 3000" in package.json file under scripts section.
+
+    npx json-server db.json --watch --port 3000 : command used to start the json-server without having to install it globally. it starts a local server that serves the fake REST API based on the data in the db.json file. by default, it runs on http://localhost:3000.
+
+
+axios : is a promise-based HTTP client for JavaScript that allows you to make HTTP requests from the browser or Node.js. it is used to communicate with APIs and retrieve data from a server. it supports all modern browsers and can be used in both front-end and back-end applications.
+    -install axios : npm install axios
+    -import axios from 'axios';
+    -syntax : 
+        axios.get('url')
+            .then(response => {
+                // handle success
+            })
+            .catch(error => {
+                // handle error
+            });
+
+axios instance : is a way to create a pre-configured instance of axios with default settings. it allows you to set default headers, base URL, and other configurations that will be applied to all requests made using that instance. it is useful for creating a centralized configuration for your API requests.
+
+    -syntax : 
+        const api = axios.create({
+            baseURL: 'https://api.example.com',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer token'
+            }
+        });
+
+        api.get('/endpoint')
+            .then(response => {
+                // handle success
+            })
+            .catch(error => {
+                // handle error
+            });
+
+interceptors : are functions that are called before a request is sent or after a response is received. they allow you to modify the request or response before it is handled by the application. they are useful for adding authentication tokens, logging requests, and handling errors.
+
+    -syntax : 
+        api.interceptors.request.use(
+            config => {
+                // modify request config
+                return config;
+            },
+            error => {
+                // handle request error
+                return Promise.reject(error);
+            }
+        );
+
+        api.interceptors.response.use(
+            response => {
+                // modify response data
+                return response;
+            },
+            error => {
+                // handle response error
+                return Promise.reject(error);
+            }
+        );
+
+        example of axios instance with interceptors : 
+            import axios from 'axios';
+
+            const api = axios.create({
+                baseURL: 'https://api.example.com',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer token'
+                }
+            });
+
+            api.interceptors.request.use(
+                config => {
+                    // modify request config
+                    return config;
+                },
+                error => {
+                    // handle request error
+                    return Promise.reject(error);
+                }
+            );
+
+            api.interceptors.response.use(
+                response => {
+                    // modify response data
+                    return response;
+                },
+                error => {
+                    // handle response error
+                    return Promise.reject(error);
+                }
+            );
+
+            export default api;
+
+
+axois requst configuration : 
+    -method : HTTP method to be used for the request. it can be GET, POST, PUT, DELETE, PATCH, etc.
+    -url : URL of the API endpoint to which the request is to be sent.
+    -headers : object containing any custom headers to be sent with the request.
+    -params : object containing any query parameters to be sent with the request.
+    -data : object containing any data to be sent with the request. it is used for POST, PUT, and PATCH requests.
+
+how to remove an installed package from a react project : 
+    -npm uninstall package-name : command used to remove an installed package from a react project. it removes the package from the node_modules folder and updates the package.json file to remove the package from the dependencies list.
+
+
+
+how to access dynamic or path parameter from url in react router dom : 
+    -useParams : hook provided by react router dom that allows you to access dynamic or path parameters from the URL. it returns an object containing the key-value pairs of the parameters.
+
+    -syntax : 
+        import { useParams } from 'react-router-dom';
+
+        const Component = () => {
+            const { id } = useParams();
+            return (
+                <div>
+                    <h1>Dynamic Parameter: {id}</h1>
+                </div>
+            );
+        };
+
+
+html2canvas : is a library that allows you to take screenshots of web pages or specific elements on a web page and convert them into canvas elements. it can be used to capture the visual representation of a web page or an element and save it as an image.
+
+    -install html2canvas : npm install html2canvas
+    -import html2canvas from 'html2canvas';
+    -syntax : 
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.body.appendChild(canvas);
+        });
+    
+    useref hook : is a hook provided by React that allows you to create a reference to a DOM element or a React component. it can be used to access the properties and methods of the referenced element or component.
+    -syntax :
+        import { useRef } from 'react';
+
+        const Component = () => {
+            const inputRef = useRef(null);
+
+            const handleClick = () => {
+                inputRef.current.focus();
+            };
+
+            return (
+                <div>
+                    <input ref={inputRef} type="text" />
+                    <button onClick={handleClick}>Focus Input</button>
+                </div>
+            );
+        };
+
+
+        form data : is a built-in JavaScript object that allows you to construct a set of key/value pairs representing form fields and their values. it can be used to send form data to a server using AJAX requests.
+    -syntax :
+        const formData = new FormData();
+        formData.append('key', 'value');
+        formData.append('file', fileInput.files[0]);
+
+        fetch('https://example.com/api', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+
+    jspdf : is a library that allows you to generate PDF documents in JavaScript. it can be used to create PDF files from HTML content, images, and other data. it supports various features like text formatting, images, tables, and more.
+    -install jspdf : npm install jspdf
+    -import { jsPDF } from 'jspdf';
+    -syntax :
+        const doc = new jsPDF();
+        doc.text('Hello world!', 10, 10);
+        doc.save('document.pdf');   
