@@ -20,3 +20,13 @@ export const addDownloadHistory = async (reqBody) => {
 export const editResumeApi = async (id, reqBody) => {
   return await apiService("PUT", `/allResume/${id}`, reqBody);
 };
+
+//api call for download History
+export const getDownloadedResumeAPI = async () => {
+  return await apiService("GET", "/downloadHistory", {});
+};
+
+//api call for deleting from download history
+export const deleteDownloadHistoryAPI = async (id) => {
+  return await apiService("DELETE", `/downloadHistory/${id}`, {});
+};

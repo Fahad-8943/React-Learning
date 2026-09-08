@@ -266,31 +266,53 @@
         "API Security",
         "Database Integration",
         "Git",
-        "HTML",
-        "CSS"
+        "HTML"
       ],
       "summary": "Node.js developer experienced in building scalable backend services and REST APIs. Skilled in server-side development, database integration, and performance optimization.",
       "id": "r52KqUYkSlg"
+    },
+    {
+      "fullName": "Mohith",
+      "job": "Full Stack Developer",
+      "location": "kozhikode",
+      "email": "mohith@gmail.com",
+      "phone": "8956322154",
+      "github": "gg",
+      "linkedin": "ll",
+      "portfolio": "pp",
+      "degree": "bca",
+      "university": "calicut",
+      "passout": "2026",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "HTML",
+        "CSS",
+        "REST APIs",
+        "Git",
+        "Deployment"
+      ],
+      "summary": "Full stack developer with hands-on experience in developing end-to-end web applications using both frontend and backend technologies. Adept at building scalable systems and delivering high-quality solutions.",
+      "id": "kRHPw9jWrHc"
     }
   ],
   "downloadHistory": [
     {
-      "timeStamp": "function toLocaleDateString() { [native code] }, function toLocaleTimeString() { [native code] }",
-      "resumeId": "bSRAQ-bHqrI",
-      "jobRole": "Node.js Developer",
-      "id": "B7BVfQ7U_kE"
-    },
-    {
-      "timeStamp": "function toLocaleDateString() { [native code] }, function toLocaleTimeString() { [native code] }",
-      "resumeId": "bSRAQ-bHqrI",
-      "jobRole": "Node.js Developer",
-      "id": "ZsVmRROU09I"
-    },
-    {
-      "timeStamp": "function toLocaleDateString() { [native code] }, function toLocaleTimeString() { [native code] }",
+      "timeStamb": "9/8/2026,9:58:03 AM",
+      "resumeImg": "https://res.cloudinary.com/yubd1hrz/image/upload/v1788841698/ck7pyu2nxnwkwzqtl6r0.png",
       "resumeId": "r52KqUYkSlg",
       "jobRole": "Node.js Developer",
-      "id": "0Wp5Cv8AgSA"
+      "id": "PFZMm6Q_4qg"
+    },
+    {
+      "timeStamb": "9/8/2026,10:16:03 AM",
+      "resumeImg": "https://res.cloudinary.com/yubd1hrz/image/upload/v1788842779/s5uafnsmx8de2eqerhlu.png",
+      "resumeId": "r52KqUYkSlg",
+      "jobRole": "Node.js Developer",
+      "id": "GWM6f2iPecs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -49,14 +49,15 @@ function ViewResume() {
   const generatePdf = async (imgUrl) => {
     const today = new Date();
     console.log(today);
-    const timeStamp = `${today.toLocaleDateString}, ${today.toLocaleTimeString}`;
-    console.log(timeStamp);
+    const timeStamb = `${today.toLocaleDateString()},${today.toLocaleTimeString()}`;
+    console.log(timeStamb);
     const pdf = new jspdf();
     const imageWidth = pdf.internal.pageSize.getWidth();
     const imageHeight = pdf.internal.pageSize.getHeight();
     pdf.addImage(imgUrl, "PNG", 0, 0, imageWidth, imageHeight);
     const downloadDetails = {
-      timeStamp,
+      timeStamb,
+      resumeImg: imgUrl,
       resumeId: id,
       jobRole: resumeData.job,
     };

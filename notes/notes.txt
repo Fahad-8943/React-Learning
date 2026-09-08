@@ -337,4 +337,9 @@ html2canvas : is a library that allows you to take screenshots of web pages or s
     -syntax :
         const doc = new jsPDF();
         doc.text('Hello world!', 10, 10);
-        doc.save('document.pdf');   
+        doc.save('document.pdf');
+        
+
+
++====================================================================
+middleware 
