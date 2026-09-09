@@ -101,8 +101,8 @@ function Edit({ resumeData, setResumeData }) {
   };
   return (
     <>
-      <button onClick={handleOpen} className="btn fs-1 text-primary">
-        <RiFileEditFill size={24} />
+      <button onClick={handleOpen} className="btn fs-5 text-primary">
+        <RiFileEditFill />
       </button>
       <Modal
         open={open}
