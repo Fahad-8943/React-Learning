@@ -343,3 +343,32 @@ html2canvas : is a library that allows you to take screenshots of web pages or s
 
 +====================================================================
 middleware 
+
++=========================================================================
+state lifting : is a technique in React where you move the state from a child component to a parent component so that it can be shared between multiple child components. this allows for better state management and avoids prop drilling.
+prop drilling : is a situation in React where you have to pass data from a parent component to a child component through multiple levels of components. this can make the code harder to read and maintain. state lifting is a solution to avoid prop drilling by moving the state to a common ancestor component.
+problems
+    -prop drilling can make the code harder to read and maintain.
+    -prop drilling can lead to performance issues as the number of components increases.
+    -prop drilling can make it difficult to manage state in large applications.
+    -coupling between components is increased as the number of components increases.
+
+    solutions
+    -state lifting : move the state to a common ancestor component so that it can be shared between multiple child components.
+    -context API : is a feature in React that allows you to share data between components without having to pass props through multiple levels of components. it provides a way to create a global state that can be accessed by any component in the application.
+
+coupling : is a measure of how closely related two components are. in React, we want to have low coupling between components so that they can be reused and maintained independently. high coupling can make it difficult to change one component without affecting others.
+
+redux : is a state management library for JavaScript applications. it provides a way to manage the state of an application in a predictable way. it is commonly used with React, but can be used with other libraries as well. redux follows a unidirectional data flow, where the state is stored in a single store and can only be updated by dispatching actions.
+
+store : is a JavaScript object that holds the state of an application. it is the single source of truth for the application state. the store is created using the createStore function from the redux library.
+
+action : is a plain JavaScript object that describes a change in the state of an application. it has a type property that describes the type of action being performed, and can have additional properties that provide data for the action.
+reducer : is a pure function that takes the current state and an action as arguments, and   
+returns a new state. it is responsible for updating the state based on the action being performed. reducers are combined using the combineReducers function from the redux library.
+dispatch : is a function that is used to send an action to the store. it is used    to trigger a state change in the application. when an action is dispatched, the store calls the reducer function with the current state and the action, and returns a new state.
+
+
+
+react-redux : is a library that provides bindings for using Redux with React. it allows you to connect your React components to the Redux store, and provides a way to access the state and dispatch actions from your components. it provides two main functions, connect and Provider, that are used to connect your components to the store.
+
