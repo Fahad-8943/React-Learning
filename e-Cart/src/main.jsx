@@ -4,10 +4,15 @@ import "./index.css";
 import App from "./App.jsx";
 import "./bootstrap.min.css";
 import { BrowserRouter } from "react-router";
+import { Provider } from "react-redux";
+import eCartStore from "./redux/store.js";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <Provider store={eCartStore}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </Provider>
   </StrictMode>,
 );

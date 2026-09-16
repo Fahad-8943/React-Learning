@@ -372,3 +372,8 @@ dispatch : is a function that is used to send an action to the store. it is used
 
 react-redux : is a library that provides bindings for using Redux with React. it allows you to connect your React components to the Redux store, and provides a way to access the state and dispatch actions from your components. it provides two main functions, connect and Provider, that are used to connect your components to the store.
 
+==========================================================================================
+
+createAsyncThunk : is a middleware for Redux that allows you to write action creators that return a function instead of an action. this function can be used to perform asynchronous operations, such as fetching data from an API, before dispatching an action to the store. it is commonly used with React applications to handle asynchronous actions in a predictable way. 
+    first argument : action type string
+    second argument : async function that performs the asynchronous operation and returns a promise. the promise can resolve with a value, which will be used as the payload for the action, or reject with an error, which will be used to dispatch a rejected action.
