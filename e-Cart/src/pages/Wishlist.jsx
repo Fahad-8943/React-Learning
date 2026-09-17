@@ -1,49 +1,60 @@
-import React from "react";
 import Header from "../components/Header";
 import { FaHeartCircleXmark } from "react-icons/fa6";
 import { BiSolidCartAdd } from "react-icons/bi";
+import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
+import heroImage from "../assets/hero.png";
 
 function Wishlist() {
   return (
     <>
       <Header />
-      <div className="container my-5">
-        <div className="row">
-          <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
-            <Card className="h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-              <Card.Img
-                variant="top"
-                src="holder.js/100px180"
-                className="bg-body-tertiary p-3"
-              />
-              <Card.Body className="d-flex flex-column p-4">
-                <Card.Title className="h5 fw-bold">Card Title</Card.Title>
-                <Card.Text className="text-secondary">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <div className="d-flex gap-2 mt-auto">
-                  <button
-                    type="button"
-                    className="btn btn-outline-danger"
-                    aria-label="Remove from wishlist"
-                  >
-                    <FaHeartCircleXmark size={20} />
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-success"
-                    aria-label="Add to cart"
-                  >
-                    <BiSolidCartAdd size={20} />
-                  </button>
-                </div>
-              </Card.Body>
-            </Card>
+
+      <main className="bg-body-tertiary min-vh-100 py-4 py-md-5">
+        <Container>
+          <div className="d-flex justify-content-between align-items-center mb-4">
+            <h1 className="h2 fw-bold mb-0">My Wishlist</h1>
+            <span className="badge text-bg-danger rounded-pill">1 item</span>
           </div>
-        </div>
-      </div>
+
+          <div className="row g-4">
+            <div className="col-12 col-sm-6 col-lg-3">
+              <Card className="h-100 border-0 shadow-sm overflow-hidden">
+                <Card.Img
+                  variant="top"
+                  src={heroImage}
+                  alt="French Collection watch"
+                  className="bg-white object-fit-cover p-3"
+                  style={{ height: "220px" }}
+                />
+                <Card.Body className="d-flex flex-column p-4">
+                  <p className="small text-success fw-semibold text-uppercase mb-2">
+                    Watches
+                  </p>
+                  <Card.Title className="h5 fw-bold">French Collection</Card.Title>
+                  <Card.Text className="text-secondary mb-4">
+                    A classic round-dial watch for everyday style.
+                  </Card.Text>
+                  <div className="d-flex gap-2 mt-auto">
+                    <Button
+                      type="button"
+                      variant="outline-danger"
+                      aria-label="Remove French Collection watch from wishlist"
+                    >
+                      <FaHeartCircleXmark size={20} />
+                    </Button>
+                    <Button type="button" variant="success" className="flex-grow-1">
+                      <BiSolidCartAdd className="me-2" size={20} />
+                      Add to cart
+                    </Button>
+                  </div>
+                </Card.Body>
+              </Card>
+            </div>
+          </div>
+        </Container>
+      </main>
     </>
   );
 }
