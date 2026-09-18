@@ -9,7 +9,7 @@ import Pagination from "../components/Pagination";
 
 function Landing() {
   const { loading, allProducts, error } = useSelector((state) => state.product);
-  console.log(loading, allProducts, error);
+  // console.log(loading, allProducts, error);
   const [currentPage, setCurrentPage] = useState(1);
   const cardPerPage = 8;
   const endingIndex = currentPage * cardPerPage;
