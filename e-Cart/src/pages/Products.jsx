@@ -6,14 +6,19 @@ import Col from "react-bootstrap/Col";
 import Header from "../components/Header";
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { addToWishlist } from "../redux/slice/wishlistSlice";
+import {
+  addToWishlist,
+  removeFromWishlist,
+} from "../redux/slice/wishlistSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../redux/slice/cartSlice";
 
 function Products() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [product, setProduct] = useState({});
   const wishlist = useSelector((state) => state.wishlist);
+
   useEffect(() => {
     if (localStorage.getItem("products")) {
       const allProducts = JSON.parse(localStorage.getItem("products"));
@@ -28,6 +33,11 @@ function Products() {
     } else {
       dispatch(addToWishlist(product));
     }
+  };
+  const handleCart = () => {
+    dispatch(addToCart(product));
+    dispatch(removeFromWishlist(product.id));
+    alert(`${product.title} was added to your cart.`);
   };
 
   return (
@@ -63,7 +73,11 @@ function Products() {
               <p className="text-secondary mb-4">{product.description}</p>
 
               <div className="d-flex flex-wrap gap-3">
-                <button type="button" className="btn btn-success px-4 py-2">
+                <button
+                  type="button"
+                  className="btn btn-success px-4 py-2"
+                  onClick={handleCart}
+                >
                   <BiSolidCartAdd className="me-2" size={20} />
                   Add to cart
                 </button>

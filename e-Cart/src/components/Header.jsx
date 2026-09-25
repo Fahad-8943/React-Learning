@@ -11,6 +11,11 @@ import { Link } from "react-router";
 
 function Header({ inLading }) {
   const wishlist = useSelector((state) => state.wishlist);
+  const cart = useSelector((state) => state.cart);
+  const cartItemCount = cart.reduce(
+    (total, product) => total + product.quantity,
+    0,
+  );
   const dispatch = useDispatch();
   return (
     <Navbar bg="dark" data-bs-theme="dark" className="shadow-sm py-3">
@@ -60,7 +65,7 @@ function Header({ inLading }) {
             className="d-flex align-items-center gap-1 p-0 text-decoration-none"
           >
             <FaShoppingCart size={28} className="text-success" />
-            <span className="fs-4 text-light fw-bold">0</span>
+            <span className="fs-4 text-light fw-bold">{cartItemCount}</span>
           </Link>
         </Nav>
       </Container>

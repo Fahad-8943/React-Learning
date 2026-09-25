@@ -5,11 +5,14 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Container from "react-bootstrap/Container";
 import heroImage from "../assets/hero.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Products from "./Products";
+import { removeFromWishlist } from "../redux/slice/wishlistSlice";
+import { addToCart } from "../redux/slice/cartSlice";
 
 function Wishlist() {
   const wishlist = useSelector((state) => state.wishlist);
+  const dispatch = useDispatch();
   return (
     <>
       <Header />
@@ -26,7 +29,7 @@ function Wishlist() {
           <div className="row g-4">
             {wishlist.length > 0 ? (
               wishlist.map((product) => (
-                <div className="col-12 col-sm-6 col-lg-3">
+                <div className="col-12 col-sm-6 col-lg-3" key={product.id}>
                   <Card className="h-100 border-0 shadow-sm overflow-hidden">
                     <Card.Img
                       variant="top"
@@ -50,6 +53,9 @@ function Wishlist() {
                           type="button"
                           variant="outline-danger"
                           aria-label="Remove French Collection watch from wishlist"
+                          onClick={() =>
+                            dispatch(removeFromWishlist(product.id))
+                          }
                         >
                           <FaHeartCircleXmark size={20} />
                         </Button>
@@ -57,6 +63,11 @@ function Wishlist() {
                           type="button"
                           variant="success"
                           className="flex-grow-1"
+                          onClick={() => {
+                            dispatch(addToCart(product));
+                            dispatch(removeFromWishlist(product.id));
+                            alert(`${product.title} was added to your cart.`);
+                          }}
                         >
                           <BiSolidCartAdd className="me-2" size={20} />
                           Add to cart
