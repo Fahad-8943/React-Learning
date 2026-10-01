@@ -11,7 +11,7 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <div className="md:grid grid-cols-3 bg-gray-900 text-white gap-20 p-10">
+      <div className=" md:grid grid-cols-3 bg-gray-900 text-white gap-20 p-10">
         <div className="p-5">
           <h4 className="font-bold">ABOUT US</h4>
           <p className="mt-4 text-justify">
@@ -52,7 +52,7 @@ function Footer() {
       <div className="bg-black text-white text-center p-5">
         <p>
           Copyright &copy;2025 All rights reserved | This website is made with ❤
-          by Rahul Raj
+          by Fahad
         </p>
       </div>
     </>

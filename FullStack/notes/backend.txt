@@ -1,0 +1,33 @@
+Backend:
+        The backend refers to the server-side part of a software application or website that handles data processing, business logic, and database interactions. It is responsible for managing requests from the frontend (user interface) and providing the necessary responses. The backend typically includes server-side programming languages, frameworks, databases, and APIs that enable communication between the client and server.
+
+        backend of a web app is the severside part of the application that user do not directly see. it handles the logic, database oprations, authentication, authorization, APIs and communication between the frontend and teh database
+        - Main responsibilities of the backend include:
+                -server-side logic and processing
+                -database management and operations
+                -authentication and authorization security
+                -API development and management
+                -Business logic implementation
+
+        -Popular backend technologies and frameworks include:
+                -javaScript (Node.js, Express.js,Next.js)
+                -Python (Django, Flask)
+                -PHP (Laravel, Symfony)
+                -Java (Spring Boot, Java EE)
+                -C# (ASP.NET, .NET Core)
+        -Database management systems commonly used in backend development include:
+                -NoSQL databases (MongoDB, Cassandra, Redis)
+                -Relational databases (MySQL, PostgreSQL, Oracle)
+                -In-memory databases (Redis, Memcached)
+                -real-time databases (Firebase Realtime Database, RethinkDB)
+
+what is server :
+        A server is a computer system or software application that provides services, resources, or data to other computers, known as clients, over a network. Servers can host websites, manage databases, handle email, and perform various other tasks. They are designed to process requests and deliver responses to clients, enabling communication and resource sharing across networks.
+    
+authentication :
+        Authentication is the process of verifying the identity of a user, device, or system before granting access to resources or services. It typically involves validating credentials such as usernames and passwords, biometric data, or security tokens. Authentication ensures that only authorized individuals can access sensitive information or perform specific actions within a system.
+
+authorization :
+        Authorization is the process of determining whether a user, device, or system has the necessary permissions to access specific resources or perform certain actions. It occurs after authentication and involves checking the user's roles, privileges, or access control policies to ensure they are allowed to perform the requested operation. Authorization helps enforce security measures and protect sensitive data from unauthorized access.
+
+
