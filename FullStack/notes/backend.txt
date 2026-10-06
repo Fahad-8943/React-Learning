@@ -21,6 +21,33 @@ Backend:
                 -In-memory databases (Redis, Memcached)
                 -real-time databases (Firebase Realtime Database, RethinkDB)
 
+what is MongoDB :
+        MongoDB is a popular open-source NoSQL database that stores data in a flexible, JSON-like format called BSON (Binary JSON). It is designed for scalability, high performance, and ease of development. MongoDB allows developers to work with unstructured or semi-structured data, making it suitable for applications that require rapid iteration and dynamic schema changes. It supports features like indexing, aggregation, replication, and sharding to handle large volumes of data and provide high availability.
+
+        types of mongoDB :
+                mongoDB community server : free and open source version of mongoDB
+                mongoDB enterprise server : paid version of mongoDB with additional features and support for enterprise use
+                mongoDB atlas : cloud-based database service provided by MongoDB, allowing users to deploy, manage, and scale MongoDB databases in the cloud without the need for on-premises infrastructure.
+
+DataBase :
+        A database is an organized collection of data that is stored electronically so it can be easily accessed, managed, and updated. 
+        2 types of databases :
+                -Relational Databases
+                -Non-Relational Databases (NoSQL)
+        SQL: stuctured query language is used to interact with relational databases.
+                -Here data are stored as tables.
+                -Row(record) and Column(field) are the basic units of data storage in relational databases.
+        
+        MongoDB is NoSQL, Document-oriented database that stores data in flexible, JSON-like documents(BSON) instead of tables. 
+        -Features of MongoDB:
+                -Schema-less: MongoDB allows for dynamic schema design, meaning that documents within a collection can have different structures.
+                scalable: MongoDB is designed to scale horizontally, allowing for the distribution of data across multiple servers or clusters.
+                -Designed for modern applications: MongoDB is well-suited for handling large volumes of unstructured or semi-structured data, making it ideal for applications that require rapid development and iteration.
+                -collection: In MongoDB, data is organized into collections, which are analogous to tables in relational databases. Each collection contains multiple documents.
+                -Document: A document is a single record in a collection, represented in BSON format.
+                -BSON (Binary JSON): BSON is a binary representation of JSON-like documents, allowing for efficient storage and retrieval of data.
+                -_id: Each document in MongoDB has a unique Key-value identifier called _id, which serves as the primary key for the document.
+
 what is server :
         A server is a computer system or software application that provides services, resources, or data to other computers, known as clients, over a network. Servers can host websites, manage databases, handle email, and perform various other tasks. They are designed to process requests and deliver responses to clients, enabling communication and resource sharing across networks.
     
@@ -31,3 +58,10 @@ authorization :
         Authorization is the process of determining whether a user, device, or system has the necessary permissions to access specific resources or perform certain actions. It occurs after authentication and involves checking the user's roles, privileges, or access control policies to ensure they are allowed to perform the requested operation. Authorization helps enforce security measures and protect sensitive data from unauthorized access.
 
 
+CURD operations:
+        CRUD stands for Create, Read, Update, and Delete, which are the four basic operations performed on data in a database. These operations allow users to manage and manipulate data effectively. In the context of backend development, CRUD operations are essential for interacting with databases and implementing functionality in applications.
+
+        - Create: Adding new records or documents to the database.
+        - Read: Retrieving existing records or documents from the database.
+        - Update: Modifying existing records or documents in the database.
+        - Delete: Removing records or documents from the database.
